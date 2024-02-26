@@ -1,2 +1,3 @@
-# Movies-Diploma-thesis-
+# Movies-Diploma-thesis
+
 Diploma thesis (TMS) 
