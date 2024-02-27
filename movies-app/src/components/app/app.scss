@@ -1,0 +1,19 @@
+@import "../../style/variables.scss";
+
+.app {
+    padding-bottom: 60px;
+    background-color: $background-black;
+
+    &-main {
+        display: flex;
+    }
+
+    &-left {
+        width: 25%;
+    }
+
+    &-right {
+        width: 100%;
+        background-color: rgb(30, 28, 28);
+    }
+}

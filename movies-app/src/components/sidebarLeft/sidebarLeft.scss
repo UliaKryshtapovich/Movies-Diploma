@@ -1,0 +1,38 @@
+@import "../../style/variables.scss";
+
+.sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-nav,  .sidebar-nav span{
+    color: $gray-text;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.svg-inline--fa {
+    color: $gray-text;
+}
+
+.sidebar-nav_item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 40px;
+}
+
+.sidebar-nav_item:hover > * {
+    color: $purple;
+}
+
+.sidebar-nav_item svg {
+    padding-right: 10px;
+}
+
+.footer {
+    color: $gray-text;
+    font-size: 16px;
+    display: flex;
+}
