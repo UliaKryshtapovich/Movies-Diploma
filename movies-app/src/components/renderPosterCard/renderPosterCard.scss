@@ -1,0 +1,29 @@
+@import "../../style/variables.scss";
+
+.render-poster {
+    max-width: 266px;
+    height: 433px;
+    border-radius: 10px;
+    color:$white-text;
+    position: relative;
+    &_img {
+        border-radius: 10px;
+        background-color:pink;
+        width: 100%;
+        height: 357px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &_rating{
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        height: 28px;
+        width: 37px;
+        border-radius: 8px;
+        background-color:$green;
+        align-items: center;
+    }
+}
