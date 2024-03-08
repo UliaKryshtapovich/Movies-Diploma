@@ -3,17 +3,17 @@
 .app {
     background-color: $background-black;
 
-    &-main {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        padding-bottom: 40px;
-    }
+    // &-main {
+    //     display: grid;
+    //     grid-template-columns: 300px 1fr;
+    //     padding-bottom: 40px;
+    // }
 
-    &-left {
-        display: flex;
-    }
+    // &-left {
+    //     display: flex;
+    // }
 
-    &-right {
-        width: 100%;
-    }
+    // &-right {
+    //     width: 100%;
+    // }
 }

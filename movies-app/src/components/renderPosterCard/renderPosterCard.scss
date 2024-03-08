@@ -1,12 +1,19 @@
 @import "../../style/variables.scss";
 
+// .movies-grid {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, 266px);
+//     justify-content: space-between;
+//     row-gap: 60px;
+// }
+
 .render-poster {
     max-width: 266px;
     height: 433px;
     border-radius: 10px;
     color:$white-text;
     position: relative;
-    &_img {
+    .render-poster_img {
         border-radius: 10px;
         background-color:pink;
         width: 100%;
@@ -16,7 +23,7 @@
             height: 100%;
         }
     }
-    &_rating{
+    .render-poster_rating{
         position: absolute;
         left: 20px;
         top: 20px;

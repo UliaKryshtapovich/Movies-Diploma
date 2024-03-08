@@ -45,7 +45,15 @@
         cursor: pointer;
     }
 
-    .icon-filter:hover {
+    .icon-search {
+        position: absolute;
+        right: 100px;
+        top: 35%;
+        height: 30%;
+        cursor: pointer;
+    }
+
+    .icon-filter:hover, .icon-search:hover{
         color: $hover-btn-icon;
     }
 
@@ -90,18 +98,18 @@
 
 .header {
     display: grid;
-    grid-template-columns: 300px 1fr; /* Одна колонка шириной 300px и вторая заполняет оставшееся пространство */
-    align-items: center; /* Выравнивание содержимого по вертикали */
+    grid-template-columns: 300px 1fr; 
+    align-items: center; 
   }
   
   .header-search {
-    display: flex; /* Чтобы иконка и инпут были в одной строке */
-    align-items: center; /* Выравнивание содержимого по вертикали */
+    display: flex; 
+    align-items: center; 
   }
   
   .header-login {
-    display: flex; /* Чтобы кнопка, текст и иконка были в одной строке */
-    align-items: center; /* Выравнивание содержимого по вертикали */
+    display: flex; 
+    align-items: center; 
   }
   
   .header-wrapper_search {

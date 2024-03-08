@@ -1,19 +1,18 @@
-
-.genres {
-    display: flex;
-    padding-bottom: 20px;
-}
- 
-.genres * {
-    border-radius: 10px;
-    background-color: cornflowerblue ;
-    padding: 10px;
-    margin-right: 10px;
-}
-
 .movies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 266px);
     justify-content: space-between;
     row-gap: 60px;
 }
+
+.main {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        padding-bottom: 40px;
+    }
+.left {
+        display: flex;
+    }
+.right {
+        width: 100%;
+    }

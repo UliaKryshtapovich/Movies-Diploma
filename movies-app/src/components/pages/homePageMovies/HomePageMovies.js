@@ -1,51 +1,86 @@
-//отображает список фильмов и кнопку 
 import React, { useState, useEffect } from "react";
+import { getPost, getSinglePost } from "../../../services/MoviesService";
 import RenderPosterCard from "../../renderPosterCard/RenderPosterCard";
-import { getMovie } from "../../../services/MoviesService";
+import Genres from "../../genres/Genres";
 import "./homePage.scss";
+import Header from "../../header/Header";
+import SidebarLeft from "../../sidebarLeft/SidebarLeft";
+import Footer from "../../footer/Footer";
+import NotFoundModal from "../../modals/notFoundMovieModal/NotFoundModal";
 
 function HomePageMovies() {
-  const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
+  const [post, setPost] = useState([]);
+  const [search, setSearch] = useState(""); //  поиск запрос
+  // const [searchResults, setSearchResults] = useState([]); //результат поиска
+  const [showModal, setShowModal] = useState(false); //  модалка not movie
 
   useEffect(() => {
-    fetchMovies();
+    getPost().then((data) => {
+      setPost(data?.Search);
+    });
   }, []);
 
-  const fetchMovies = async () => {
-    try {
-      const data = await getMovie();
-      setMovies(prevMovies => [...prevMovies, ...data.Search]);
-    } catch (error) {
-      console.error("Error fetching movies:", error);
-    }
+  const handleSearch = () => {
+    getPost(search).then((data) => {
+      if (data?.Search && data.Search.length > 0) {
+        setPost(data.Search);
+        console.log(data.Search);
+      } else {
+        setShowModal(true); 
+      }
+    });
   };
 
-  const loadMoreMovies = () => {
-    setPage(prevPage => prevPage + 1);
+  const handleCloseModal = () => { 
+    setShowModal(false);
+  };
+
+  const handleClickPost = (imdbID) => {
+    console.log(imdbID);
+    getSinglePost(imdbID).then((data) => {
+      console.log(data);
+    });
   };
 
   return (
-    <div className="all-movies_wrapper" >
-      <div className="genres">
-        <div> genres </div>
-        <div> genres </div>
-        <div> genres </div>
+    <div className="container">
+      <Header 
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        onClick={handleSearch}
+      />
+      <div className="app-main main">
+        <div className="app-left left">
+          <SidebarLeft />
+        </div>
+        <div className="app-right right">
+          <div className="all-movies_wrapper">
+            <Genres />
+            <div className="movies-list" id="movies">
+            {showModal && <NotFoundModal show={showModal} handleClose={handleCloseModal} />}
+              <ul className="movies-grid">
+                {post &&
+                  post.map((data) => (
+                    <RenderPosterCard
+                      key={data.imdbID}
+                      imdbID={data.imdbID}
+                      Poster={data.Poster}
+                      Title={data.Title}
+                      Rating={data.Rating}
+                      Year={data.Year}
+                      onClick={() => handleClickPost(data.imdbID)}
+                      Type={data.Type}
+                    />
+                  ))}
+              </ul>
+            </div>
+            <button className="button button-load">
+              <div className="inner">load more</div>
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="movies-list" id="movies">
-        <ul className="movies-grid">
-          {movies.map(movie => (
-            <li key={movie.imdbID} className="movies-item">
-              <a href="#">
-                <RenderPosterCard movie={movie} />
-              </a>
-            </li>
-          ))}
-        </ul>
-        <button className="button button-load" onClick={loadMoreMovies}>
-          <div className="inner">load more</div>
-        </button>
-      </div>
+      <Footer />
     </div>
   );
 }
