@@ -19,8 +19,8 @@ function App() {
             <Route path="/trends" element={<TrendsPage />} />
             <Route path="/favoritesPage" element={<FavoritesPage />} />
             <Route path="/settingsPage" element={<SettingsPage />} />
-            {/* <Route path="/detailPage/:detailId" element={<DetailPage />} /> */}
-            <Route path="/homePage/:detailId" element={<DetailPage />} />
+            <Route path="/detailPage/:detailId" element={<DetailPage />} />
+            {/* <Route path="/homePage/:detailId" element={<DetailPage />} /> */}
             <Route path="/*" element={<ErrorMessage />} />
           </Routes>
         </HomePageMovies>
