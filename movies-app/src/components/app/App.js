@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { SearchProvider } from "../searchContext/SearchContext";
 import {
   PostersList,
   DetailPage,
@@ -18,6 +19,7 @@ import Header from "../header/Header";
 function App() {
   return (
     <Router>
+      <SearchProvider>
       <div className="app container">
         <Header />  
         <div className="app-main main">
@@ -37,6 +39,7 @@ function App() {
         </div>
         </div>
       </div>
+      </SearchProvider>
     </Router>
   );
 }

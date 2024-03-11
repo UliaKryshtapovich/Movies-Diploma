@@ -3,22 +3,29 @@ import { getSinglePost, getPost } from "../../../services/MoviesService";
 import { Link } from "react-router-dom";
 import "../../pages/postersList/postersList.scss";
 import DetailPage from "../../../components/pages/detailPage/DetailPage";
+import { useSearchContext } from "../../searchContext/SearchContext";
+import posterNotFound from "../../../resources/img-not-found.jpg";
 
 function PostersList() {
   const [postersList, setPostersList] = useState([]);// получить список фильмов
   const [movieData, setMovieData] = useState(null); // данные фильма из запроса getSinglePost
   const [showDetailPage, setShowDetailPage] = useState(false); // открыть detailPage
+  const { searchResults } = useSearchContext(); //результат поиска и setSearchResults - ф-я для обновления {}
 
-  useEffect(() => { // список фильмов api
+  useEffect(() => {
     getPost("new").then((data) => {
       setPostersList(data?.Search);
     });
   }, []);
 
-  const handleClickPost = (imdbID) => { // данные страницы с фильмом с api
-    console.log("клик на постер id", imdbID);
+  useEffect(() => {
+    if (searchResults.length > 0) {
+      setPostersList(searchResults);
+    }
+  }, [searchResults]);
+
+  const handleClickPost = (imdbID) => {
     getSinglePost(imdbID).then((data) => {
-      console.log("получить данные для 1 страницы с фильмом", data);
       setMovieData(data);
       setShowDetailPage(true);
     });
@@ -37,7 +44,8 @@ function PostersList() {
             <Link to={`/detail/${data.imdbID}`}>
               <div className="render-poster">
                 <div className="render-poster_img">
-                  <img src={data.Poster} alt={data.Title} />
+                <img src={data.Poster || posterNotFound} alt={data.Title} />
+                  {/* <img src={data.Poster} alt={data.Title} /> */}
                 </div>
                 <div className="render-poster_rating">{data.imdbRating}</div>
                 <h3>{data.Title}</h3>
