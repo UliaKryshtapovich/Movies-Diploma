@@ -1,6 +1,26 @@
 @import "../style/variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 266px);
+    justify-content: space-between;
+    row-gap: 60px;
+}
+
+.main {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        padding-bottom: 40px;
+    }
+.left {
+        display: flex;
+    }
+.right {
+        width: 100%;
+    }
+
+
 * {
     font-family: "Exo 2", sans-serif;
     margin: 0;

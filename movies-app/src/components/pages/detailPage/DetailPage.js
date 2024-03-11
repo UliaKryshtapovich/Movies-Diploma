@@ -1,65 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getSinglePost } from "../../../services/MoviesService";
 import "../detailPage/detailPage.scss";
-// import img from "../../../resources/img-not-found.jpg";
-// import { useParams, Link  } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function DetailPage({
-  Runtime,
-  BoxOffice,
-  Country,
-  Actors,
-  Released,
-  Director,
-  Writer,
-  Plot,
-  Poster,
-  Title,
-  Year,
-  onClick,
-  ImdbID,
-  ImdbRating,
-  ImdbVotes,
-  Type,
-  Genre
-}) {
+function DetailPage({ selectedImdbID }) {
+  let { imdbID } = useParams();
+  const [movieData, setMovieData] = useState(null);
+
+  useEffect(() => {
+    if (imdbID) {
+      console.log("переход на страницу с фильмом id", imdbID)
+      getSinglePost(imdbID).then((data) => {
+        setMovieData(data);
+      });
+    }
+  }, [imdbID]);
+
   return (
-    <div className="detail-wrapper" style={{backgroundColor: "pink"}} imdbID={ImdbID}>
-      <div className="detail-img_wrapper" data-type={Type}>
-        <div className="detail-img_img" style={{backgroundColor: "white"}}>
-          <img src={Poster} alt={Title} className="detail-img_img" />
-        </div>
-        <div className="detail-btn_wrapper">
-          <div className="detail-btn_bookmark" onClick={onClick}>
-            <p> </p>
+    <div className="detail-wrapper">
+      {movieData && (
+        <div className="detail-wrapper" style={{backgroundColor: "pink"}}>
+          <div className="detail-img_wrapper" data-type={movieData.Type}>
+            <div className="detail-img_img" style={{backgroundColor: "white"}}>
+              <img src={movieData.Poster} alt={movieData.Title} className="detail-img_img" />
+            </div>
+            <div className="detail-btn_wrapper">
+              <div className="detail-btn_bookmark" >
+                <p> </p>
+              </div>
+              <div className="detail-btn_share">
+                <h3>{movieData.Title}</h3>
+              </div>
+            </div>
           </div>
-          <div className="detail-btn_share">
-            <h3>{Title}</h3>
+          <div className="detail-info_wrapper">
+            <div className="detail-info_category">
+              <p>{movieData.Genre}</p>
+            </div>
+            <div className="detail-info_title"> </div>
+            <div className="detail-info_overview">
+              <div>{movieData.imdbRating} </div>
+              <div>IMDb: {movieData.imdbVotes}</div>
+              <div>{movieData.Runtime}</div>
+            </div>
+            <div className="detail-info_more">
+              <p> Year: {movieData.Year}</p>
+              <p> Released: {movieData.Released}</p>
+              <p> Plot: {movieData.Plot}</p>
+              <p> BoxOffice: {movieData.BoxOffice}</p>
+              <p> Country: {movieData.Country}</p>
+              <p> Actors: {movieData.Actors}</p>
+              <p> Director: {movieData.Director}</p>
+              <p> Writer: {movieData.Writer} </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="detail-info_wrapper">
-        <div className="detail-info_category">
-          <p>{Genre}</p>
-        </div>
-        <div className="detail-info_title"> </div>
-        <div className="detail-info_overview">
-          <div>{ImdbRating} </div>
-          <div>IMDb: {ImdbVotes}</div>
-          <div>{Runtime}</div>
-        </div>
-        <div className="detail-info_more">
-          <p> Year: {Year}</p>
-          <p> Released: {Released}</p>
-          <p> Plot: {Plot}</p>
-          <p> BoxOffice: {BoxOffice}</p>
-          <p> Country: {Country}</p>
-          <p> Actors: {Actors}</p>
-          <p> Director: {Director}</p>
-          <p> Writer: {Writer} </p>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
 
-export default DetailPage;
+export default DetailPage
+
+
+

@@ -15,13 +15,13 @@ const SidebarLeft = () => {
       <nav className="sidebar-nav">
         <ul className="sidebar-nav_list">
           <li className="sidebar-nav_item">
-            <Link to="/homePage">
+            <Link to="/postersList">
               <FontAwesomeIcon icon={faHouse} />
               Home
             </Link>
           </li>
           <li className="sidebar-nav_item">
-            <NavLink end activeStyle={{ color: "#9f0013" }} to="/trends">
+            <NavLink end activeStyle={{ color: "#9f0013" }} to="/trendsPage">
               <FontAwesomeIcon icon={faFireFlameCurved} />
               Trends
             </NavLink>

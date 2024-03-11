@@ -1,29 +1,41 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  PostersList,
+  DetailPage,
+  FavoritesPage,
+  SettingsPage,
+  Page404,
+  TrendsPage,
+} from "../pages";
 import "../../style/style.scss";
 import "../app/app.scss";
-import HomePageMovies from "../pages/homePageMovies/HomePageMovies";
-import DetailPage from "../pages/detailPage/DetailPage";
-import TrendsPage from "../pages/trendsPage/TrendsPage";
-import ErrorMessage from "../pages/errorMessagePage/ErrorMessage";
-import FavoritesPage from "../pages/favoritesPage/FavoritesPage";
-import SettingsPage from "../pages/settingsPage/SettingsPage";
+import Genres from "../genres/Genres";
+import SidebarLeft from "../sidebarLeft/SidebarLeft";
+import "../sidebarLeft/sidebarLeft.scss";
+import Header from "../header/Header";
 
 function App() {
   return (
     <Router>
-      <div className="app">
-        <HomePageMovies>
-          <Routes>
-            <Route path="/homePage" element={<HomePageMovies />} />
-            <Route path="/trends" element={<TrendsPage />} />
-            <Route path="/favoritesPage" element={<FavoritesPage />} />
-            <Route path="/settingsPage" element={<SettingsPage />} />
-            <Route path="/detailPage/:detailId" element={<DetailPage />} />
-            {/* <Route path="/homePage/:detailId" element={<DetailPage />} /> */}
-            <Route path="/*" element={<ErrorMessage />} />
-          </Routes>
-        </HomePageMovies>
+      <div className="app container">
+        <Header />  
+        <div className="app-main main">
+        <div className="app-left left">
+          <SidebarLeft />
+        </div>
+        <div className="app-right right">
+          <Genres/>
+        <Routes>
+          <Route path="/postersList" element={<PostersList />} />
+          <Route path="/detail/:imdbID" element={<DetailPage />} /> 
+          <Route path="/trends" element={<TrendsPage />} />
+          <Route path="/favoritesPage" element={<FavoritesPage />} />
+          <Route path="/settingsPage" element={<SettingsPage />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+        </div>
+        </div>
       </div>
     </Router>
   );

@@ -1,11 +1,4 @@
-@import "../../style/variables.scss";
-
-// .movies-grid {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fill, 266px);
-//     justify-content: space-between;
-//     row-gap: 60px;
-// }
+@import "../../../style/variables.scss";
 
 .render-poster {
     max-width: 266px;
