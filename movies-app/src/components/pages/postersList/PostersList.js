@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPostersList, setLoading, setPage, resetPostersList } from "../../redux/postersSlice";
 import { getSinglePost, getPost } from "../../../services/MoviesService";
-import { Link } from "react-router-dom";
 import "../../pages/postersList/postersList.scss";
 import DetailPage from "../../../components/pages/detailPage/DetailPage";
 import { useSearchContext } from "../../searchContext/SearchContext";
-import posterNotFound from "../../../resources/img-not-found.jpg";
+// import {notFoundImg} from "../../../resources/img-not-found.jpg";
+import PosterCard from "./posterCard";
 
 function PostersList() {
-  const [postersList, setPostersList] = useState([]);// получить список фильмов
-  const [movieData, setMovieData] = useState(null); // данные фильма из запроса getSinglePost
-  const [showDetailPage, setShowDetailPage] = useState(false); // открыть detailPage
-  const { searchResults } = useSearchContext(); //результат поиска и setSearchResults - ф-я для обновления {}
+  const [showDetailPage, setShowDetailPage] = useState(false);
+  const [movieData, setMovieData] = useState(null);
+  const { searchResults } = useSearchContext();
+  const dispatch = useDispatch();
+  const currentPage = useSelector((state) => state.posters.page);
+  const postersListData = useSelector((state) => state.posters.postersList) || [];
 
   useEffect(() => {
-    getPost("new").then((data) => {
-      setPostersList(data?.Search);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (searchResults.length > 0) {
-      setPostersList(searchResults);
+    if (searchResults.length === 0) {
+      getPost("new").then((data) => {
+        dispatch(setPostersList(data?.Search));
+      });
+    } else {
+      dispatch(setPostersList(searchResults));
     }
-  }, [searchResults]);
+     return () => {  //сбрасываем список постеров(когда переходим на home)
+      dispatch(resetPostersList());
+    };
+  }, [searchResults, dispatch]);
 
   const handleClickPost = (imdbID) => {
     getSinglePost(imdbID).then((data) => {
@@ -31,33 +36,41 @@ function PostersList() {
     });
   };
 
+  const loadMore = () => {
+    const nextPage = currentPage + 1;
+    dispatch(setLoading(true));
+    dispatch(setPage(nextPage));
+    getPost(
+      searchResults.length === 0 ? "new" : searchResults[0].Title,
+      nextPage
+    ).then((data) => {
+      if (data?.Search) {
+        dispatch(setPostersList(data?.Search, false));
+        dispatch(setLoading(false));
+      }
+    });
+  };
+  
   return (
     <div className="posters-list">
       <ul className="movies-grid">
-        {postersList.map((data) => (
-          <li
-            Type={data.Type}
-            id={data.imdbID}
+        {postersListData.map((data) => (
+          <PosterCard
             key={data.imdbID}
-            onClick={() => handleClickPost(data.imdbID)}
-          >
-            <Link to={`/detail/${data.imdbID}`}>
-              <div className="render-poster">
-                <div className="render-poster_img">
-                <img src={data.Poster || posterNotFound} alt={data.Title} />
-                  {/* <img src={data.Poster} alt={data.Title} /> */}
-                </div>
-                <div className="render-poster_rating">{data.imdbRating}</div>
-                <h3>{data.Title}</h3>
-                <p>{data.Year}</p>
-              </div>
-            </Link>
-          </li>
+            data={data}
+            onClick={handleClickPost}
+          />
         ))}
       </ul>
-      {showDetailPage && <DetailPage movieData={movieData} />} 
+      {showDetailPage && <DetailPage movieData={movieData} />}
+      <div className="posters-button_wrapper">
+        <button className="button-posters button-load" onClick={loadMore}>
+          <div className="inner"> Show more </div>
+        </button>
+      </div>
     </div>
   );
 }
 
 export default PostersList;
+

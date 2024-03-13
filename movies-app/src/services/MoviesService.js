@@ -1,7 +1,5 @@
 import axios from "axios";
 
-//redux можно использовать для подзагрузки постеров на странице при нажатии на show more (надо сначала отрисовать и сохранить в redux)
-
 export async function getPost( // прокидываем через useEffect
   search = "",
   page = 1,
@@ -32,7 +30,7 @@ export async function getPost( // прокидываем через useEffect
   }
 }
 
-export async function getSinglePost(id) {
+export async function getSinglePost(id) { // конкретный фильм по id
   try {
     const { data, status } = await axios.get(`https://www.omdbapi.com/?apikey=9be02b9c&i=${id}`, {
       headers: {

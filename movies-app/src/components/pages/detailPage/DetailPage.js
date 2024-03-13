@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { getSinglePost } from "../../../services/MoviesService";
 import "../detailPage/detailPage.scss";
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 
-function DetailPage({ selectedImdbID }) {
+function DetailPage() {
   let { imdbID } = useParams();
   const [movieData, setMovieData] = useState(null);
 
@@ -17,19 +19,19 @@ function DetailPage({ selectedImdbID }) {
   }, [imdbID]);
 
   return (
-    <div className="detail-wrapper">
+    <div className="detail-page">
       {movieData && (
-        <div className="detail-wrapper" style={{backgroundColor: "pink"}}>
+        <div className="detail-wrapper">
           <div className="detail-img_wrapper" data-type={movieData.Type}>
-            <div className="detail-img_img" style={{backgroundColor: "white"}}>
-              <img src={movieData.Poster} alt={movieData.Title} className="detail-img_img" />
+            <div className="detail-img_img">
+              <img src={movieData.Poster} className="detail-img_img" />
             </div>
             <div className="detail-btn_wrapper">
               <div className="detail-btn_bookmark" >
-                <p> </p>
+              <FontAwesomeIcon icon={faBookmark} />
               </div>
               <div className="detail-btn_share">
-                <h3>{movieData.Title}</h3>
+                <FontAwesomeIcon icon={faShareNodes} />
               </div>
             </div>
           </div>
@@ -37,21 +39,23 @@ function DetailPage({ selectedImdbID }) {
             <div className="detail-info_category">
               <p>{movieData.Genre}</p>
             </div>
-            <div className="detail-info_title"> </div>
+            <div className="detail-info_title"> 
+                <h3>{movieData.Title}</h3>
+            </div>
             <div className="detail-info_overview">
               <div>{movieData.imdbRating} </div>
               <div>IMDb: {movieData.imdbVotes}</div>
               <div>{movieData.Runtime}</div>
             </div>
+            <div className="detail-info_plot"> <p> {movieData.Plot}</p></div>
             <div className="detail-info_more">
-              <p> Year: {movieData.Year}</p>
-              <p> Released: {movieData.Released}</p>
-              <p> Plot: {movieData.Plot}</p>
-              <p> BoxOffice: {movieData.BoxOffice}</p>
-              <p> Country: {movieData.Country}</p>
-              <p> Actors: {movieData.Actors}</p>
-              <p> Director: {movieData.Director}</p>
-              <p> Writer: {movieData.Writer} </p>
+              <div  className="detail-info_more__text"> Year: <p> {movieData.Year} </p></div>
+              <div  className="detail-info_more__text"> Released: <p> {movieData.Released} </p> </div>
+              <div  className="detail-info_more__text"> BoxOffice:<p>  {movieData.BoxOffice}</p></div>
+              <div  className="detail-info_more__text"> Country: <p> {movieData.Country}</p></div>
+              <div  className="detail-info_more__text"> Actors:<p> {movieData.Actors}</p></div>
+              <div  className="detail-info_more__text"> Director: <p>{movieData.Director} </p></div>
+              <div  className="detail-info_more__text"> Writer:<p>{movieData.Writer} </p> </div>
             </div>
           </div>
         </div>

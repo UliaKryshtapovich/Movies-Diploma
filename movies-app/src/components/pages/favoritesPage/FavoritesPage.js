@@ -4,14 +4,8 @@ import "../favoritesPage/favoritesPage.scss";
 
 function FavoritesPage() {
   return (
-    <div className="all-films_wrapper">
-        <div className="genres"> 
-        <div> genres </div>
-        <div> genres </div>
-        <div> genres </div>
-        </div>
-      {/* <RenderPosterCard/> */}
-      <p> favorites : </p>
+    <div className="favorites-wrapper">
+      <h3 style={{color: "white"}}> favorites : </h3>
     </div>
   );
 }

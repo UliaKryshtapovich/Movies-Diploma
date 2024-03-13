@@ -4,26 +4,41 @@
     max-width: 266px;
     height: 433px;
     border-radius: 10px;
-    color:$white-text;
+    color: $white-text;
     position: relative;
+
     .render-poster_img {
-        border-radius: 10px;
-        background-color:pink;
+        overflow: hidden;
+        border-radius: 20px;
+        border: solid transparent 1px;
         width: 100%;
         height: 357px;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
         }
     }
-    .render-poster_rating{
+
+    .render-poster_rating {
         position: absolute;
         left: 20px;
         top: 20px;
         height: 28px;
         width: 37px;
         border-radius: 8px;
-        background-color:$green;
+        background-color: $green;
         align-items: center;
     }
+}
+
+.posters-button_wrapper {
+    display: flex;
+    justify-content: center;
+
+    .button-posters {
+        padding: 15px;
+        cursor: pointer;
+    }
+
 }

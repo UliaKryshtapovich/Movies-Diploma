@@ -1,30 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { BrowserRouter } from "react-router-dom";
-// import { getAllMovies, getMovie } from './services/MoviesService.js';
 import "./index.css";
+// import App from "./components/app/App";
+
+import { Provider } from 'react-redux';
+import store from '../src/components/redux/store'; // Путь к вашему Redux store
 import App from "./components/app/App";
-// import { getMovie, getMovieByTitle  } from '../src/services/MoviesService';
 
-
-// getMovieByTitle('Inception') // названия фильма
-//   .then(movie => console.log(movie))
-//   .catch(error => console.error(error));
-
-
-// getMovie('tt3896198') // идентификатора IMDb
-//   .then(movie => console.log(movie))
-//   .catch(error => console.error(error));
-
-
-// getAllMovies().then(res => console.log(res));
-// getMovie("tt2023587").then(res => console.log(res));
-
+// обертка, чтобы все компоненты получили доступ к состоянию Redux
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <BrowserRouter> */}
+  <Provider store={store}> 
+  {/* <React.StrictMode> */}
       <App />
-    {/* </BrowserRouter> */}
-  </React.StrictMode>,
+  {/* </React.StrictMode>, */}
+  </Provider>,
   document.getElementById("root")
 );

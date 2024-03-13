@@ -3,13 +3,8 @@ import "../trendsPage/trendsPage.scss";
 
 function TrendsPage() {
   return (
-    <div className="all-films_wrapper">
-        <div className="genres"> 
-        <div> genres </div>
-        <div> genres </div>
-        <div> genres </div>
-        </div>
-      <p> trends : </p>
+    <div className="trends-wrapper">
+      <h3 style={{color: "white"}}> trends </h3>
     </div>
   );
 }
