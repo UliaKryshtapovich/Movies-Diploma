@@ -13,7 +13,7 @@ function PosterCard({ data, onClick }) {
       <Link to={`/detail/${data.imdbID}`}>
         <div className="render-poster">
           <div className="render-poster_img">
-            <img src={data.Poster || notFoundImg} alt={data.Title} />
+          <img src={data.Poster !== "N/A" ? data.Poster : notFoundImg} alt={data.Title} />
           </div>
           <div className="render-poster_rating">{data.imdbRating}</div>
           <h3>{data.Title}</h3>

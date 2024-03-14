@@ -4,7 +4,7 @@ import "../trendsPage/trendsPage.scss";
 function TrendsPage() {
   return (
     <div className="trends-wrapper">
-      <h3 style={{color: "white"}}> trends </h3>
+      <h3> trends </h3>
     </div>
   );
 }

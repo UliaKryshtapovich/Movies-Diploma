@@ -1,6 +1,9 @@
 @import "../../style/variables.scss";
 
 .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     color: $gray-text;
     font-size: 16px;
     display: flex;

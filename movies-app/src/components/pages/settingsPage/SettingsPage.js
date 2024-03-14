@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+// import React, { useEffect, useState } from "react";
+import React from "react";
 import "../settingsPage/settingsPage.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "../../pages/settingsPage/ThemeContext";
+
 
 const SettingsPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  // const toggleTheme = () => {
-  //   setDarkMode(!darkMode);
-  //   // Здесь можно добавить логику для сохранения выбранной темы в localStorage или другом хранилище
-  // };
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`theme-toggle ${darkMode ? 'dark' : 'light'}`}>
-      <label style={{color:"white"}}>
-        <input
-          type="checkbox"
-          // checked={darkMode}
-          // onChange={toggleTheme}
-        />
-        Change Theme
-      </label>
+    <div className="settings-wrapper">
+      <div 
+        className={`theme-toggle`}
+        onClick={toggleTheme}
+        style={{ cursor: 'pointer', color: theme === 'dark' ? 'var(--colors-text-dark)' : 'var(--colors-text-light)' }}
+      >
+        {theme === 'dark' ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
+        <label style={{cursor: 'pointer', marginLeft: '10px' }}>Change Theme</label>
+      </div>
     </div>
   );
 };

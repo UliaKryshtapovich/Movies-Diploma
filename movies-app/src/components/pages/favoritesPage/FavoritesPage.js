@@ -5,7 +5,7 @@ import "../favoritesPage/favoritesPage.scss";
 function FavoritesPage() {
   return (
     <div className="favorites-wrapper">
-      <h3 style={{color: "white"}}> favorites : </h3>
+      <h3> favorites : </h3>
     </div>
   );
 }

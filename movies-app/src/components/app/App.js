@@ -11,15 +11,16 @@ import {
 } from "../pages";
 import "../../style/style.scss";
 import "../app/app.scss";
-import Genres from "../genres/Genres";
 import SidebarLeft from "../sidebarLeft/SidebarLeft";
 import "../sidebarLeft/sidebarLeft.scss";
 import Header from "../header/Header";
 import Footer from "../../components/footer/Footer";
+import { ThemeProvider } from '../pages/settingsPage/ThemeContext';
 
 function App() {
   return (
     <Router>
+         <ThemeProvider> 
       <SearchProvider>
         <div className="app container">
           <Header />
@@ -42,6 +43,7 @@ function App() {
           <Footer />
         </div>
       </SearchProvider>
+      </ThemeProvider>
     </Router>
   );
 }

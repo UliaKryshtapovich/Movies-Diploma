@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-// передача данных между компанентами header и postslist без пропсов (можно было и через redux)
+// передача данных между компанентами header и postslist без пропсов (можно-нужно было и через redux)
 const SearchContext = createContext();//объект контекста, созданный с помощью функции createContext()
 
 export const SearchProvider = ({ children }) => {//обертка для предоставления контекста
