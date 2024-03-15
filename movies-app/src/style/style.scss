@@ -35,6 +35,19 @@ p {
     box-sizing: border-box;
 }
 
+input {
+    border:none;
+}
+
+input::placeholder {
+    padding-left: 10px; 
+  }
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
 .container {
     margin: auto;
     padding: 0 40px;

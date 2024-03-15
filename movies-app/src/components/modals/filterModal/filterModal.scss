@@ -1,0 +1,143 @@
+@import "../../../style/variables.scss";
+
+.filter {
+    display: block;
+    height: 100vh;
+    width: 30%;
+    background-color: var(--colors-bg_sort);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    &-wrapper {
+        padding: 55px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &-title_wrapper {
+        display: flex;
+        padding-bottom: 30px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-sort {
+        display: flex;
+        flex-direction: column;
+
+        &_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 30px;
+            border-bottom: 1px solid $gray-text;
+        }
+
+        &_rating,
+        &_year {
+            width: 50%;
+            height: 50px;
+            border: none;
+        }
+        &_year {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+           
+        }
+        &_rating{
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-right: 1px solid black;
+        }
+  
+    }
+
+    &-movie {
+        padding: 35px 0px;
+
+        &_input {
+            width: 100%;
+            height: 40px;
+            border-radius: 15px;
+        }
+    }
+
+    &-genre {
+        padding-bottom: 35px;
+
+        &_sort {
+            width: 100%;
+            height: 50px;
+            background-color: lightgrey;
+            border-radius: 15px;
+        }
+    }
+
+    &-years {
+        padding-bottom: 35px;
+
+        &_wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &_from,
+        &_to {
+            width: 48%;
+            height: 40px;
+            border-radius: 15px;
+        }
+    }
+
+    &-rating {
+        padding-bottom: 35px;
+
+        &_wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &_from,
+        &_to {
+            width: 48%;
+            height: 40px;
+            border-radius: 15px;
+        }
+    }
+
+    &-country {
+        padding-bottom: 60px;
+
+        &_input {
+            width: 100%;
+            height: 40px;
+            border-radius: 15px;
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        justify-content: space-between;
+
+        &_clear,
+        &_results {
+            height: 50px;
+            width: 48%;
+            border-radius: 15px;
+        }
+    }
+
+    p {
+        padding-bottom: 14px;
+    }
+
+}
+
+.filter-icon_close {
+    font-size: 23px;
+  }

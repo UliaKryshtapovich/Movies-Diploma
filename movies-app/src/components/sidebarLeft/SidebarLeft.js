@@ -21,19 +21,19 @@ const SidebarLeft = () => {
             </Link>
           </li>
           <li className="sidebar-nav_item">
-            <NavLink end activeStyle={{ color: "#9f0013" }} to="/trendsPage">
+            <NavLink to="/trendsPage">
               <FontAwesomeIcon icon={faFireFlameCurved} />
               Trends
             </NavLink>
           </li>
           <li className="sidebar-nav_item">
-            <NavLink end activeStyle={{ color: "#9f0013" }} to="/favoritesPage">
+            <NavLink to="/favoritesPage">
               <FontAwesomeIcon icon={faBookmark} />
               Favorites
             </NavLink>
           </li>
           <li className="sidebar-nav_item">
-            <NavLink end activeStyle={{ color: "#9f0013" }} to="/settingsPage">
+            <NavLink to="/settingsPage">
               <FontAwesomeIcon icon={faGear} />
               Settings
             </NavLink>

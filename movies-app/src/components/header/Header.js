@@ -12,13 +12,15 @@ import NotFoundModal from "../modals/notFoundMovieModal/NotFoundModal";
 import { getPost } from "../../services/MoviesService";
 import { useSearchContext } from "../searchContext/SearchContext";
 import { useTheme } from "../pages/settingsPage/ThemeContext";
+import FilterModal from "../../components/modals/filterModal/FilterModal";
 
 function Header() {
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
   const { setSearchResults } = useSearchContext();
-  const { theme } = useTheme(); // тема 
+  const { theme } = useTheme(); // тема
   const [searchError, setSearchError] = useState(false); // для отслеживания ошибки поиска
+  const [showFilterModal, setShowFilterModal] = useState(false);
 
   const handleSearch = () => {
     getPost(search).then((data) => {
@@ -27,14 +29,22 @@ function Header() {
         setSearchResults(data.Search);
         setSearchError(false);
       } else {
-        setSearchError(true); 
-        setShowModal(true); 
+        setSearchError(true);
+        setShowModal(true);
       }
     });
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const handleOpenFilterModal = () => {
+    setShowFilterModal(true);
+  };
+
+  const handleCloseFilterModal = () => {
+    setShowFilterModal(false);
   };
 
   return (
@@ -54,22 +64,33 @@ function Header() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
+          {showFilterModal && (
+            <FilterModal
+              show={showFilterModal}
+              handleClose={handleCloseFilterModal}
+            />
+          )}
           <FontAwesomeIcon
             icon={faFilter}
             className="icon-filter"
-            // onClick={onClick}
+            onClick={handleOpenFilterModal}
           />
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             className="icon-search"
             // onClick={onClick}
-            Value={search}
+            value={search}
             onClick={handleSearch}
           />
         </div>
         <div className="header-login">
           <button className="header-btn">AL</button>
-          <p className="header-btn_text" style={{ color:'var(--colors-title)'}}>Artem Lapitski</p>
+          <p
+            className="header-btn_text"
+            style={{ color: "var(--colors-title)" }}
+          >
+            Artem Lapitski
+          </p>
           <FontAwesomeIcon icon={faChevronDown} className="arrow-down_icon" />
         </div>
       </div>

@@ -21,17 +21,17 @@ function DetailPage() {
   return (
     <div className="detail-page">
       {movieData && (
-        <div className="detail-wrapper">
+        <div className="detail-wrapper" >
           <div className="detail-img_wrapper" data-type={movieData.Type}>
             <div className="detail-img_img">
               <img src={movieData.Poster} className="detail-img_img" />
             </div>
             <div className="detail-btn_wrapper">
               <div className="detail-btn_bookmark" >
-              <FontAwesomeIcon icon={faBookmark} />
+              <FontAwesomeIcon icon={faBookmark} className="detail-icon"/>
               </div>
               <div className="detail-btn_share">
-                <FontAwesomeIcon icon={faShareNodes} />
+                <FontAwesomeIcon icon={faShareNodes} className="detail-icon"/>
               </div>
             </div>
           </div>

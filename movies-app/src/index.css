@@ -13,33 +13,35 @@ body {
 body[data-theme="dark"] {
   --colors-text: rgba(255, 255, 255, 1);
   --colors-bg: rgba(0, 0, 0, 1);
+  --colors-bg_input: rgba(36, 36, 38, 1);
+  --colors-bg_btn: rgba(50, 53, 55, 1);
+  --colors-bg_sort:rgba(36, 36, 38, 1);
+  --colors-title:  rgba(255, 255, 255, 1);
+  --colors-bg_btn_secondary: rgba(128, 133, 139, 1); 
 }
 
 body[data-theme="light"] {
   --colors-text: rgba(128, 133, 139, 1);
   --colors-bg: rgba(255, 255, 255, 1);
   --colors-title: rgba(36, 36, 38, 1);
+  --colors-bg_input: rgba(255, 255, 255, 1);
+  --colors-bg_btn: rgba(128, 133, 139, 1);
+  /* --colors-bg_sort:rgba(128, 133, 139, 1); */
+  --colors-bg_sort:rgba(175, 178, 182, 1);
+  --colors-bg_btn_secondary: rgba(50, 53, 55, 1);
 }
 
 :root {
-  --colors-text-dark: rgba(128, 133, 139, 1);
+  --colors-text-dark: rgba(255, 255, 255, 1);
   --colors-text-light: rgba(0, 0, 0, 1);
   --colors-title-dark: rgba(255, 255, 255, 1);
 }
 
-body[data-theme="dark"] {
-  --colors-bg_input: rgba(36, 36, 38, 1);
-}
-
-body[data-theme="light"] {
-  --colors-bg_input: rgba(255, 255, 255, 1);
-}
-
 body[data-theme="light"] .header-search_input {
-  border: 1px solid Gray;
+  border: 1px solid rgba(175, 178, 182, 1);
 }
 
-/* p */
+/* text body */
 body[data-theme="dark"] {
   --colors-text: var(--colors-text-dark);
 }
@@ -48,30 +50,9 @@ body[data-theme="light"] {
   --colors-text: var(--colors-text-light);
 }
 
-body[data-theme="dark"] p {
-  color: var(--colors-text-dark);
-}
-
-body[data-theme="light"] p {
-  color: var(--colors-text-light);
-}
-
-/* h3 */
-
-body[data-theme="light"] {
-  --colors-title: var(--colors-title-light);
-}
-
-body[data-theme="dark"] {
-  --colors-title: var(--colors-title-dark);
-}
-
-body[data-theme="dark"] h3 {
-  color: var(--colors-title-dark);
-}
-
-body[data-theme="dark"] h3 {
-  color: var(--colors-title-light);
+/* h3  */
+h3 {
+  color: var(--colors-title);
 }
 
 code {
