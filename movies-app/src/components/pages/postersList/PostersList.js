@@ -5,7 +5,6 @@ import { getSinglePost, getPost } from "../../../services/MoviesService";
 import "../../pages/postersList/postersList.scss";
 import DetailPage from "../../../components/pages/detailPage/DetailPage";
 import { useSearchContext } from "../../searchContext/SearchContext";
-// import {notFoundImg} from "../../../resources/img-not-found.jpg";
 import PosterCard from "./posterCard";
 
 function PostersList() {
@@ -73,4 +72,3 @@ function PostersList() {
 }
 
 export default PostersList;
-

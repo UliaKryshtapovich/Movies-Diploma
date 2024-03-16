@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import postersReducer from './postersSlice';
+import filterReducer from './filterSlice';
+
 
  
 export default configureStore({
   reducer: {
-    posters: postersReducer,// логикa управления состоянием для списка постеров
+    posters: postersReducer,//управлениe состояния  для списка постеров
+    filters: filterReducer// состояния  для поиска при фильтре 
   },
 });
-// хранилище Redux

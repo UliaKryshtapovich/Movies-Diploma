@@ -24,7 +24,7 @@ function DetailPage() {
         <div className="detail-wrapper" >
           <div className="detail-img_wrapper" data-type={movieData.Type}>
             <div className="detail-img_img">
-              <img src={movieData.Poster} className="detail-img_img" />
+              <img src={movieData.Poster} className="detail-img_img" alt="poster"/>
             </div>
             <div className="detail-btn_wrapper">
               <div className="detail-btn_bookmark" >

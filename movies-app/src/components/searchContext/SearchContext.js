@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
 
 // передача данных между компанентами header и postslist без пропсов (можно-нужно было и через redux)
-const SearchContext = createContext();//объект контекста, созданный с помощью функции createContext()
+const SearchContext = createContext(); //объект контекста, созданный с помощью функции createContext()
 
-export const SearchProvider = ({ children }) => {//обертка для предоставления контекста
-  const [searchResults, setSearchResults] = useState([]);//результат поиска и setSearchResults - ф-я для обновления {}
+export const SearchProvider = ({ children }) => {
+  //обертка для предоставления контекста
+  const [searchResults, setSearchResults] = useState([]); //результат поиска и setSearchResults - ф-я для обновления {}
 
   return (
     <SearchContext.Provider value={{ searchResults, setSearchResults }}>

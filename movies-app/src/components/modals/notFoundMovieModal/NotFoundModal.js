@@ -20,10 +20,10 @@ function NotFoundModal({ show, handleClose }) {
           display: show ? "block" : "none",
           backgroundColor: "rgba(123, 97, 255, 1)",
           padding: "50px",
-          display: "flex",
+          // display: "flex",
           justifyContent: "left",
           alignItems: "center",
-          justifyContent: "center",
+          // justifyContent: "center",
         }}
       >
         <div className="modal-dialog modal-dialog-centered" role="document">
