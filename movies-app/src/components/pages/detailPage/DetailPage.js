@@ -4,10 +4,12 @@ import "../detailPage/detailPage.scss";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import notFoundImg from "../../../resources/img-not-found.jpg";
 
-function DetailPage() {
+function DetailPage({ addToFavorites }) {
   let { imdbID } = useParams();
   const [movieData, setMovieData] = useState(null);
+  const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
 
   useEffect(() => {
     if (imdbID) {
@@ -18,17 +20,24 @@ function DetailPage() {
     }
   }, [imdbID]);
 
+  const handleAddToFavorites = () => {
+    if (movieData && !isAddedToFavorites) {
+      addToFavorites(movieData);
+      setIsAddedToFavorites(true);
+    }
+  };
+
   return (
     <div className="detail-page">
       {movieData && (
         <div className="detail-wrapper" >
           <div className="detail-img_wrapper" data-type={movieData.Type}>
             <div className="detail-img_img">
-              <img src={movieData.Poster} className="detail-img_img" alt="poster"/>
+            <img src={movieData.Poster !== "N/A" ? movieData.Poster : notFoundImg} alt={movieData.Title} />
             </div>
             <div className="detail-btn_wrapper">
-              <div className="detail-btn_bookmark" >
-              <FontAwesomeIcon icon={faBookmark} className="detail-icon"/>
+              <div className="detail-btn_bookmark" onClick={handleAddToFavorites}>
+                <FontAwesomeIcon icon={faBookmark} className="detail-icon"/>
               </div>
               <div className="detail-btn_share">
                 <FontAwesomeIcon icon={faShareNodes} className="detail-icon"/>
@@ -64,7 +73,5 @@ function DetailPage() {
   );
 }
 
-export default DetailPage
-
-
+export default DetailPage;
 

@@ -8,7 +8,7 @@ import { useSearchContext } from "../../searchContext/SearchContext";
 import PosterCard from "./posterCard";
 
 function PostersList() {
-  const [showDetailPage, setShowDetailPage] = useState(false);
+  const [showDetailPage, setShowDetailPage] = useState(false); 
   const [movieData, setMovieData] = useState(null);
   const { searchResults } = useSearchContext();
   const dispatch = useDispatch();

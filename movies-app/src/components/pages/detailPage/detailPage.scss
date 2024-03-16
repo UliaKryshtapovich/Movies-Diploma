@@ -20,13 +20,12 @@
         margin-bottom: 30px;
         height: 356px;
         overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
-
-    .detail-img_img img {
-        width: 100%;
-        object-fit: cover;
-    }
-
     .detail-btn_wrapper {
         display: flex;
         justify-content: space-around;
@@ -77,13 +76,6 @@
         padding: 15px;
         cursor: pointer;
     }
-
-    // .detail-btn_bookmark:hover,
-    // .detail-btn_share:hover {
-    //     background-color: $purple-hover-btn;
-    //     // border-radius: 20%;
-    // }
-
 
     .detail-icon {
         color: var(--colors-bg_btn_secondary);

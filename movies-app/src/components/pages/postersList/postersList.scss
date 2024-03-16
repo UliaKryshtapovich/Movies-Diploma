@@ -4,7 +4,6 @@
     max-width: 266px;
     height: 433px;
     border-radius: 10px;
-    // color: $white-text;
     position: relative;
 
     .render-poster_img {
@@ -24,11 +23,11 @@
         position: absolute;
         left: 20px;
         top: 20px;
-        height: 28px;
-        width: 37px;
+        // height: 28px;
+        // width: 37px;
+        padding:5px ;
         border-radius: 8px;
         background-color: $green;
-        align-items: center;
     }
 }
 

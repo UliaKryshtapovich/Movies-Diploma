@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const postersSlice = createSlice({// состояние изначальное 
+const postersSlice = createSlice({
   name: 'posters',
   initialState: {
     postersList: [],
@@ -8,16 +8,13 @@ const postersSlice = createSlice({// состояние изначальное
     page: 1,
   },
   reducers: {
-    setPostersList(state, action) { // для отображения страницы во время поиска 
-      if (action.payload.length === 0 && action.isSearch) {
-        // если результат поиска пустой и это новый поиск-заменяем список
+    setPostersList(state, action) { // обновить список постеров
+      if (action.payload.length === 0 && action.isSearch) { // если результат поиска пустой и это новый поиск-заменяем список
         state.postersList = action.payload;
-      } else if (action.isSearch) {
-        // если это новый поиск и результаты не пустые- заменяем список
+      } else if (action.isSearch) { // если это новый поиск и результаты не пустые- заменяем список
         state.postersList = action.payload;
         state.page = 1; // сбросить номер страницы
-      } else {
-        // если это show more, добавляем новые постеры к текущему списку
+      } else { // если это show more, добавляем новые постеры к текущему списку
         state.postersList = state.postersList.concat(action.payload);
       }
     },

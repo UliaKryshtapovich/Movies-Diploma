@@ -4,13 +4,14 @@ export async function getPost( // прокидываем через useEffect
   search = "",
   page = 1,
   type = null,
-  year = null
+  year = null,
+  id
 ) {
   try {
     const { data, status } = await axios.get(
       `https://www.omdbapi.com/?apikey=9be02b9c&s=${search}${page ? `&page=${page}` : ""}${
         type ? `&type=${type}` : ""
-      }${year ? `&y=${year}` : ""}`,
+      }${year ? `&y=${year}` : ""}&i=${id}`,
       {
         headers: {
           Accept: "application/json",
