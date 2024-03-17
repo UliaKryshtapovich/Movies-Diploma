@@ -30,4 +30,8 @@
     svg {
         padding-right: 10px;
     }
+   
 }
+ li.highlighted *{
+    color: $purple;
+ }

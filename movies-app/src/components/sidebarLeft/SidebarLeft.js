@@ -8,8 +8,17 @@ import {
   faBookmark,
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
+import $ from 'jquery';
 
 const SidebarLeft = () => {
+
+  $(document).ready(function() {
+    $("li").click(function() {
+      $("li").removeClass('highlighted');
+      $(this).addClass('highlighted');
+    });
+  });
+  
   return (
     <div className="sidebar-wrapper">
       <nav className="sidebar-nav">

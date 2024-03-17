@@ -14,13 +14,13 @@ const postersSlice = createSlice({
       } else if (action.isSearch) { // если это новый поиск и результаты не пустые- заменяем список
         state.postersList = action.payload;
         state.page = 1; // сбросить номер страницы
-      } else { // если это show more, добавляем новые постеры к текущему списку
+      } else { // show more, добавляем новые постеры к текущему списку
         state.postersList = state.postersList.concat(action.payload);
       }
     },
-    setLoading(state, action) { // состояние загрузки 
-      state.loading = action.payload;
-    },
+    // setLoading(state, action) { // состояние загрузки 
+    //   state.loading = action.payload;
+    // },
     setPage(state, action) { // текущая страница
       state.page = action.payload;
     },
@@ -30,6 +30,6 @@ const postersSlice = createSlice({
   },
 });
 
-export const { setPostersList, setLoading, setPage, resetPostersList } = postersSlice.actions;
-
+// export const { setPostersList, setLoading, setPage, resetPostersList } = postersSlice.actions;
+export const { setPostersList, setPage, resetPostersList } = postersSlice.actions;
 export default postersSlice.reducer;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPostersList, setLoading, setPage, resetPostersList } from "../../redux/postersSlice";
+import { setPostersList, setPage, resetPostersList } from "../../redux/postersSlice";
 import { getSinglePost, getPost } from "../../../services/MoviesService";
 import "../../pages/postersList/postersList.scss";
 import DetailPage from "../../../components/pages/detailPage/DetailPage";
@@ -37,7 +37,7 @@ function PostersList() {
 
   const loadMore = () => {
     const nextPage = currentPage + 1;
-    dispatch(setLoading(true));
+    // dispatch(setLoading(true));
     dispatch(setPage(nextPage));
     getPost(
       searchResults.length === 0 ? "new" : searchResults[0].Title,
@@ -45,11 +45,11 @@ function PostersList() {
     ).then((data) => {
       if (data?.Search) {
         dispatch(setPostersList(data?.Search, false));
-        dispatch(setLoading(false));
+        // dispatch(setLoading(false));
       }
     });
   };
-  
+
   return (
     <div className="posters-list">
       <ul className="movies-grid">

@@ -23,8 +23,6 @@
         position: absolute;
         left: 20px;
         top: 20px;
-        // height: 28px;
-        // width: 37px;
         padding:5px ;
         border-radius: 8px;
         background-color: $green;
@@ -36,8 +34,15 @@
     justify-content: center;
 
     .button-posters {
-        padding: 15px;
+        padding: 10px 30px;
+        border-radius:15px;
         cursor: pointer;
+        background-color:var(--colors-bg_input);
+        color: var(--colors-title);
+        &:hover {
+          background-color:  $hover-btn-icon;
+          transition: background-color 0.3s ease;  
+        }
     }
 
 }

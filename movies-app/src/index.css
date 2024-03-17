@@ -37,7 +37,11 @@ body[data-theme="light"] {
   --colors-title-dark: rgba(255, 255, 255, 1);
 }
 
-body[data-theme="light"] .header-search_input {
+body[data-theme="light"] .header-search_input{
+  border: 1px solid rgba(175, 178, 182, 1);
+}
+
+body[data-theme="light"] .button-posters{
   border: 1px solid rgba(175, 178, 182, 1);
 }
 

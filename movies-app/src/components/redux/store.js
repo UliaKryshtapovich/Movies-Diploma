@@ -7,6 +7,6 @@ import filterReducer from './filterSlice';
 export default configureStore({
   reducer: {
     posters: postersReducer,//управлениe состояния  для списка постеров
-    filters: filterReducer// состояния  для поиска при фильтре 
+    filter: filterReducer// состояния  для поиска при фильтре 
   },
 });

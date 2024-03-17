@@ -45,7 +45,7 @@
             border: none;
         }
 
-        &_year {
+        &_year{
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;
 
@@ -86,18 +86,12 @@
 
     &-years {
         padding-bottom: 35px;
-
-        &_wrapper {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        &_from,
-        &_to {
-            width: 48%;
-            height: 40px;
+        &_input{
+            width: 100%;
             border-radius: 15px;
+            height: 50px;
         }
+
     }
 
     &-rating {
@@ -141,6 +135,19 @@
     p {
         padding-bottom: 14px;
     }
+
+    button:hover {
+        background-color: $purple-hover-btn;
+    }
+
+    // button:active,
+    // button.active {     
+    //     background-color: $purple;
+    // }
+    .highlighted {
+        background-color: $purple;
+      }
+      
 
 }
 
