@@ -7,20 +7,23 @@ import {
   faChevronDown,
   faFilter,
   faMagnifyingGlass,
+  faBars
 } from "@fortawesome/free-solid-svg-icons";
 import NotFoundModal from "../modals/notFoundMovieModal/NotFoundModal";
 import { getPost } from "../../services/MoviesService";
 import { useSearchContext } from "../searchContext/SearchContext";
 import { useTheme } from "../pages/settingsPage/ThemeContext";
 import FilterModal from "../../components/modals/filterModal/FilterModal";
+import SidebarLeft from "../sidebarLeft/SidebarLeft";
 
 function Header() {
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
   const { setSearchResults } = useSearchContext();
   const { theme } = useTheme(); // тема
-  const [searchError, setSearchError] = useState(false); // для отслеживания ошибки поиска
+  const [searchError, setSearchError] = useState(false); 
   const [showFilterModal, setShowFilterModal] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSearch = () => {
     getPost(search).then((data) => {
@@ -45,6 +48,10 @@ function Header() {
 
   const handleCloseFilterModal = () => {
     setShowFilterModal(false);
+  };
+
+  const handleOpenBurgerMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -93,6 +100,13 @@ function Header() {
           </p>
           <FontAwesomeIcon icon={faChevronDown} className="arrow-down_icon" />
         </div>
+        <button
+          className={isMenuOpen ? "burger-menu open" : "burger-menu"}
+          onClick={handleOpenBurgerMenu}
+        >
+         <FontAwesomeIcon icon={faBars} className="burger-menu_icon" />
+          {isMenuOpen && <SidebarLeft />}
+        </button>
       </div>
       {showModal && searchError && (
         <NotFoundModal show={showModal} handleClose={handleCloseModal} />

@@ -36,12 +36,12 @@ function DetailPage({ addToFavorites }) {
             <img src={movieData.Poster !== "N/A" ? movieData.Poster : notFoundImg} alt={movieData.Title} />
             </div>
             <div className="detail-btn_wrapper">
-              <div className="detail-btn_bookmark" onClick={handleAddToFavorites}>
+              <button className="detail-btn_bookmark" onClick={handleAddToFavorites}>
                 <FontAwesomeIcon icon={faBookmark} className="detail-icon"/>
-              </div>
-              <div className="detail-btn_share">
+              </button>
+              <button className="detail-btn_share">
                 <FontAwesomeIcon icon={faShareNodes} className="detail-icon"/>
-              </div>
+              </button>
             </div>
           </div>
           <div className="detail-info_wrapper">

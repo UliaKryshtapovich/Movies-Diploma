@@ -102,4 +102,21 @@
         font-size: 16px;
         padding-left: 20px;
     }
+
+    .burger-menu {
+        display: none;
+        width: 56px;
+        border-radius: 10px;
+        height: 56px;
+        background-color: $purple;
+
+        &_icon {
+            color: $white-text;
+        }
+
+        @media (max-width:769px) {
+            display: block;
+        }
+
+    }
 }

@@ -30,6 +30,9 @@
     svg {
         padding-right: 10px;
     }
+    &:last-child {
+        padding-bottom: 0;
+      }
    
 }
  li.highlighted *{
