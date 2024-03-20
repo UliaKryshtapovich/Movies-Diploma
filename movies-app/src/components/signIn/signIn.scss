@@ -1,0 +1,45 @@
+@import '../../style/variables.scss';
+
+.signin-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    background-image: url('../../resources/Frame.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    background-color: black;
+}   
+.signin-form{
+    width: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 40px;
+    background-color:$background-graphite;
+    input, button {
+        width: 100%;
+        height: 56px;
+        margin-bottom: 10px;
+    }
+    button{
+        background-color:$purple;
+    }
+    button:hover{
+       background-color: $purple-hover-btn;
+    }
+    h2{
+        padding-bottom: 30px;
+    }
+    p{
+        padding-bottom: 20px;
+    }
+}
