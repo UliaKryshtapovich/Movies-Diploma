@@ -8,13 +8,11 @@ import {
   resetFilters,
 } from "../../redux/filterSlice";
 import "../../../components/modals/filterModal/filterModal.scss";
-// import { getPost } from "../../../services/MoviesService";
 import $ from "jquery";
 
 function FilterModal({ handleClose }) {
   const [yearFilter, setYearFilterLocal] = useState("");
   const [typeFilter, setTypeFilterLocal] = useState("");
-  // const [titleFilter, setTitleFilterLocal] = useState("");
   const dispatch = useDispatch();
 
   const handleYearChange = (e) => {
@@ -33,15 +31,14 @@ function FilterModal({ handleClose }) {
 
   const handleClearFilters = () => {
     dispatch(resetFilters()); // сброс всех фильтров
-    setYearFilterLocal(""); // сброс фильтра по году
-    setTypeFilterLocal(""); // сброс фильтра по типу
+    setYearFilterLocal(""); //  по году
+    setTypeFilterLocal(""); // типу
   };
 
   const handleFiltersClick = () => {
     // диспатчим экшен для обновления
     dispatch(setYearFilter(yearFilter));
     dispatch(setTypeFilter(typeFilter));
-    // dispatch(setTitleFilter(titleFilter)); // обновления фильтра по заголовку
     handleClose();
   };
 
@@ -122,7 +119,6 @@ function FilterModal({ handleClose }) {
             className="filter-buttons_clear filter-btn"
             onClick={handleClearFilters}
           >
-            {" "}
             Clear filter{" "}
           </button>
           <button

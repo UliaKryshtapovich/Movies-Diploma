@@ -31,7 +31,7 @@
 
         .movies-grid {
             grid-template-columns: repeat(auto-fill, 208px);
-            row-gap: 10px;
+            row-gap: 40px;
         }
 
         .render-poster .render-poster_img {
@@ -40,13 +40,15 @@
 
         .sidebar-wrapper {
             position: fixed;
-            right: 30px;
-            top: 94px;
             background-color: var(--colors-bg_sort);
             z-index: 10;
-            padding: 20px;
-            border-radius: 15px;
+            padding: 20px 40px;
             // color:var(--colors-text);
+            right: 0px;
+            top: 0px;
+            height: 100vh;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
         }
 
         .footer {

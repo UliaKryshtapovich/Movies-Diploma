@@ -48,3 +48,4 @@ function PosterCard({ data, onClick }) {// текущиe фильтры по г�
 }
 
 export default PosterCard;
+

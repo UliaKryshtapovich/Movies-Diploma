@@ -1,0 +1,96 @@
+@import '../../../style/variables.scss';
+
+.swiper-container {
+  max-width: 900px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width:1921px) {
+    max-width: 1544px;
+  }
+
+  @media (max-width:1441px) {
+    max-width: 900px;
+  }
+
+  @media (max-width:1025px) {
+    max-width: 645px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      z-index: 2;
+      position: absolute;
+      top: var(--swiper-navigation-top-offset, 30%);
+    }
+  }
+
+  @media (max-width:768px) {
+    max-width: 708px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: absolute;
+      top: var(--swiper-navigation-top-offset, 35%);
+    }
+
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $purple;
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    color: $purple;
+    position: absolute;
+    top: 35%;
+  }
+
+  .swiper-pagination,
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: 50%;
+  }
+
+}
+
+.posters-list_trends {
+  .movies-grid_trends {
+    padding-top: 50px;
+  }
+
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
