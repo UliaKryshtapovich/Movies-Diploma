@@ -20,14 +20,14 @@ const SignIn = ({ onSignIn }) => {
     <div className="signin-wrapper">
       <div className="signin-form">
         <h2>Sign In</h2>
-        <p>email </p>
+        <p>Email </p>
         <input
           type="email"
           placeholder="Enter your email"
           value={inputEmail}
           onChange={(e) => setInputEmail(e.target.value)}
         />
-        <p> password </p>
+        <p> Password </p>
         <input
           type="password"
           placeholder="Enter your password"

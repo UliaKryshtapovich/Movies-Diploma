@@ -97,12 +97,12 @@ function Header() {
           />
         </div>
         <div className="header-login">
-          <button className="header-btn">AL</button>
+          <button className="header-btn">JK</button>
           <p
             className="header-btn_text"
             style={{ color: "var(--colors-title)" }}
           >
-            Artem Lapitski
+            Julia K.
           </p>
           <FontAwesomeIcon icon={faChevronDown} className="arrow-down_icon" />
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import '../success/success.scss';
 
 const Success = () => {
   const navigate = useNavigate();
@@ -10,8 +11,10 @@ const Success = () => {
 
   return (
     <div className="success-wrapper">
-      <p>You have successfully logged into your account!</p>
+      <div className="success-main"> 
+      <h3>You have successfully logged into your account!</h3>
       <button onClick={handleWelcomeClick}>Welcome</button>
+      </div>
     </div>
   );
 };

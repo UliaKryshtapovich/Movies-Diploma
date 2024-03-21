@@ -24,11 +24,16 @@
     justify-content: space-between;
     flex-direction: column;
     padding: 40px;
-    background-color:$background-graphite;
+    background-color:$background-dark;
+    input{
+        background-color:$background-graphite;
+        color:$white-text;
+    }
     input, button {
         width: 100%;
         height: 56px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        border-radius: 10px;
     }
     button{
         background-color:$purple;
