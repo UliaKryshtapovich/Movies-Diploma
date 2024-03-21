@@ -34,7 +34,11 @@
     justify-content: center;
 
     .button-posters {
-        padding: 10px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 150px;
         border-radius:15px;
         cursor: pointer;
         background-color:var(--colors-bg_input);

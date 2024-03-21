@@ -6,17 +6,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark, faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import notFoundImg from "../../../resources/img-not-found.jpg";
 import RecommendedPostersSlider from "../../recomendPosterSlider/RecomendPosterSlider";
+import LoadingSpinner from '../../loadingSpinner/LoadingSpinner';
 
 function DetailPage({ addToFavorites }) {
   let { imdbID } = useParams();
   const [movieData, setMovieData] = useState(null);
   const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     if (imdbID) {
       console.log("переход на страницу с фильмом id", imdbID);
       getSinglePost(imdbID).then((data) => {
         setMovieData(data);
+        setLoading(false);
       });
     }
   }, [imdbID]);
@@ -30,6 +34,7 @@ function DetailPage({ addToFavorites }) {
 
   return (
     <div className="detail-page">
+       {loading && <LoadingSpinner />}
       {movieData && (
         <div className="detail-wrapper">
           <div className="detail-img_wrapper" data-type={movieData.Type}>
