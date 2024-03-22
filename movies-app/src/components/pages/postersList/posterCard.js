@@ -3,27 +3,28 @@ import { Link } from "react-router-dom";
 import notFoundImg from "../../../resources/img-not-found.jpg";
 import { useSelector } from "react-redux";
 
-function PosterCard({ data, onClick }) {// текущиe фильтры по году и типу из redux
-  const yearFilter = useSelector((state) => state.filter.year); 
-  const typeFilter = useSelector((state) => state.filter.type); 
+function PosterCard({ data, onClick }) {
+  // текущиe фильтры по году и типу из redux
+  const yearFilter = useSelector((state) => state.filter.year);
+  const typeFilter = useSelector((state) => state.filter.type);
 
   const isYearMatch = () => {
     if (!yearFilter) return true; // фильтр не установлен -> показываем все постеры
-    return data.Year === yearFilter; 
+    return data.Year === yearFilter;
   };
 
   const isTypeMatch = () => {
-    if (!typeFilter) return true; 
-    return data.Type === typeFilter; 
+    if (!typeFilter) return true;
+    return data.Type === typeFilter;
   };
 
   const isMatch = () => {
-    return isYearMatch() && isTypeMatch(); 
+    return isYearMatch() && isTypeMatch();
   };
 
   if (!isMatch()) {
     return null;
-  };
+  }
 
   return (
     <li
@@ -35,12 +36,17 @@ function PosterCard({ data, onClick }) {// текущиe фильтры по г�
       <Link to={`/detail/${data.imdbID}`}>
         <div className="render-poster">
           <div className="render-poster_img">
-          <img src={data.Poster !== "N/A" ? data.Poster : notFoundImg} alt={data.Title} />
+            <img
+              src={data.Poster !== "N/A" ? data.Poster : notFoundImg}
+              alt={data.Title}
+            />
           </div>
           <div className="render-poster_rating">{data.imdbRating}</div>
           <h3>{data.Title}</h3>
-          <p>{data.Year}</p>
-          <p>{data.Type} </p>
+          <div className="render-poster_info" style={{display:'flex'}}>
+            <p style={{paddingRight: '5px'}}>{data.Type}: </p>
+            <p>{data.Year}</p>
+          </div>
         </div>
       </Link>
     </li>
@@ -48,4 +54,3 @@ function PosterCard({ data, onClick }) {// текущиe фильтры по г�
 }
 
 export default PosterCard;
-

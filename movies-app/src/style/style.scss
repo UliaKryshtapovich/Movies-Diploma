@@ -24,6 +24,7 @@
 
 h3 {
     font-size: 24px;
+    font-weight: bold;
 }
 
 p {
@@ -101,32 +102,3 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; 
 }
-
-// .app {
-//     width: 1100px;
-//     margin: 0 auto;
-//     padding: 50px 0 50px 0;
-//     position: relative;
-//     .bg-decoration {
-//         position: absolute;
-//         right: -174px;
-//         bottom: -70px;
-//         z-index: -1;
-//     }
-// }
-
-// .pulse {
-//     animation: pulse 1.5s ease-in-out .5s infinite
-// }
-
-// @keyframes pulse {
-//     0% {
-//         opacity: 1
-//     }
-//     50% {
-//         opacity: .4
-//     }
-//     100% {
-//         opacity: 1
-//     }
-// }

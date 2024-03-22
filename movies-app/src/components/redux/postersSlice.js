@@ -18,9 +18,6 @@ const postersSlice = createSlice({
         state.postersList = state.postersList.concat(action.payload);
       }
     },
-    // setLoading(state, action) { // состояние загрузки 
-    //   state.loading = action.payload;
-    // },
     setPage(state, action) { // текущая страница
       state.page = action.payload;
     },
@@ -30,6 +27,5 @@ const postersSlice = createSlice({
   },
 });
 
-// export const { setPostersList, setLoading, setPage, resetPostersList } = postersSlice.actions;
 export const { setPostersList, setPage, resetPostersList } = postersSlice.actions;
 export default postersSlice.reducer;

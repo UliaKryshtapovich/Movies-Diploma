@@ -1,0 +1,22 @@
+@import '../../../style/variables.scss';
+
+.favorite-delete {
+    position: relative;
+    max-width: 266px;
+    .bookmark-icon {
+        border-radius: 10px;
+        padding: 7px 17px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: var(--colors-bg_btn);
+    }
+
+    .favorite-icon {
+        color: $purple;
+    }
+
+    .favorite-icon:hover {
+        color: $purple-hover-btn;
+    }
+}
