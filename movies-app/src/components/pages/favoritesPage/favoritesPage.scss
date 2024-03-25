@@ -20,3 +20,13 @@
         color: $purple-hover-btn;
     }
 }
+
+.empty-favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img{
+        padding-bottom: 20px;
+    }
+}

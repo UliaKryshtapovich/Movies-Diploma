@@ -36,7 +36,7 @@ function FilterModal({ handleClose }) {
   };
 
   const handleFiltersClick = () => {
-    // диспатчим экшен для обновления
+    // диспатчим для обновления actions 
     dispatch(setYearFilter(yearFilter));
     dispatch(setTypeFilter(typeFilter));
     handleClose();
@@ -119,7 +119,7 @@ function FilterModal({ handleClose }) {
             className="filter-buttons_clear filter-btn"
             onClick={handleClearFilters}
           >
-            Clear filter{" "}
+            Clear filter
           </button>
           <button
             className="filter-buttons_results filter-btn"

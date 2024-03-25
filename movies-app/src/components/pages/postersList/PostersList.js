@@ -10,6 +10,7 @@ import "../../pages/postersList/postersList.scss";
 import DetailPage from "../../../components/pages/detailPage/DetailPage";
 import { useSearchContext } from "../../searchContext/SearchContext";
 import PosterCard from "./posterCard";
+import NoMoreMovies from '../../modals/NoMoreMovies/NoMoreMovies';
 
 function PostersList() {
   const [showDetailPage, setShowDetailPage] = useState(false);
@@ -20,6 +21,7 @@ function PostersList() {
   const postersListData =
     useSelector((state) => state.posters.postersList) || [];
   const [loading, setLoading] = useState(false);
+  const [showNoMoreMovies, setShowNoMoreMovies] = useState(false);
 
   useEffect(() => {
     if (searchResults.length === 0) {
@@ -52,9 +54,17 @@ function PostersList() {
     ).then((data) => {
       if (data?.Search) {
         dispatch(setPostersList(data?.Search, false));
-        setLoading(false); 
+        setLoading(false);
+      } else {
+        // модальное окно, если нет больше результатов
+        setShowNoMoreMovies(true);
+        setLoading(false);
       }
     });
+  };
+
+  const handleCloseNoMoreMovies = () => {
+    setShowNoMoreMovies(false);
   };
 
   return (
@@ -65,6 +75,7 @@ function PostersList() {
         ))}
       </ul>
       {showDetailPage && <DetailPage movieData={movieData} />}
+      <NoMoreMovies show={showNoMoreMovies} onClose={handleCloseNoMoreMovies} />
       <div className="posters-button_wrapper">
         <button className="button-posters button-load" onClick={loadMore}>
           <div className="inner">

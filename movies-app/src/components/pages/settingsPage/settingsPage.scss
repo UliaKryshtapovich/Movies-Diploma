@@ -1,0 +1,70 @@
+@import '../../../style/variables.scss';
+
+.settings-wrapper {
+
+    h3 {
+        padding-bottom: 20px;
+    }
+
+    span {
+        padding-bottom: 10px;
+    }
+
+    .profile,
+    .password,
+    .color {
+        padding-bottom: 40px;
+    }
+
+    .password-start {
+        padding-bottom: 30px;
+    }
+
+    .profile-wrapper,
+    .password-wrapper,
+    .color-wrapper {
+        background-color: var(--colors-bg_btn);
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px;
+        justify-content: space-between;
+
+    }
+
+    .password-start,
+    .password-new,
+    .password-confirm,
+    .profile-email,
+    .profile-name {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+    }
+
+    input {
+        background-color: var(--colors-bg_input);
+        border-radius: 10px;
+        height: 53px;
+        color:var(--colors-text);
+    }
+
+    .btns {
+        display: flex;
+        justify-content: flex-end;
+
+        .button {
+            padding: 23px 0px;
+            width: 266px;
+            border-radius: 10px;
+            background-color: $purple;
+
+            &:hover {
+                background-color: $purple-hover-btn;
+            }
+        }
+        .save {
+            margin-left: 10px;
+        }
+    }
+}
