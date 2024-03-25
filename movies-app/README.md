@@ -15,19 +15,20 @@ This website is created for searching movies and TV shows. On the Home page, you
 Julia Kryshtapovich  
 GitHub: [UliaKryshtapovich](https://github.com/UliaKryshtapovich)
 
-## License
-[License Name](link to license file)....
-
 ## Installation
 Clone the repository:
-git clone https://github.com/UliaKryshtapovich/Movies-Diploma.git
--cd Movies-Diploma
--Install dependencies: npm install
--Start the development server: npm start
+git clone https://github.com/UliaKryshtapovich/Movies-Diploma.git ;
+-cd Movies-Diploma ;
+-Install dependencies: npm install ;
+-Start the development server: npm start ;
 
 ## Screenshots
 
-Home Page : 
-Trends Page :
-Favorites Page :
-Settings Page :
+Home Page : <img width="956" alt="Снимок экрана 2024-03-25 в 14 15 49" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/2b007815-8c49-46b0-8061-61868103566d">
+
+Trends Page :  <img width="956" alt="Снимок экрана 2024-03-25 в 14 15 49" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/f666feaa-0791-4b43-b41a-e2b5bb77d1a5">
+
+
+Favorites Page :<img width="957" alt="Снимок экрана 2024-03-25 в 14 24 53" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/8acda933-2ddf-4810-a381-830b0e357f2a">
+
+Settings Page :<img width="950" alt="Снимок экрана 2024-03-25 в 14 25 03" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/2038ddb8-4d40-4f72-8131-ea01dfe6cc8a">
