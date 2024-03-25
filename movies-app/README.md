@@ -26,8 +26,7 @@ git clone https://github.com/UliaKryshtapovich/Movies-Diploma.git ;
 
 Home Page : <img width="956" alt="Снимок экрана 2024-03-25 в 14 15 49" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/2b007815-8c49-46b0-8061-61868103566d">
 
-Trends Page :  <img width="956" alt="Снимок экрана 2024-03-25 в 14 15 49" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/f666feaa-0791-4b43-b41a-e2b5bb77d1a5">
-
+Trends Page : <img width="954" alt="Снимок экрана 2024-03-25 в 14 23 52" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/8e258745-1f13-4ea7-828a-c198675c9f33">
 
 Favorites Page :<img width="957" alt="Снимок экрана 2024-03-25 в 14 24 53" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/8acda933-2ddf-4810-a381-830b0e357f2a">
 
