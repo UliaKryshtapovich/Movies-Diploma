@@ -7,11 +7,11 @@ This is a project of a Movie website.
 This website is created for searching movies and TV shows. On the Home page, you can enter the movie title you are looking for in the search bar. You can sort the results using filters by date and genre type. The Trends page shows you which movies are in the top for the current month and week. You can also add your favorite movies to the Favorites page. The Settings page allows you to change the theme of the entire site.
 
 ## Libraries Used
--Axios
--jQuery
--Swiper
--Redux Toolkit
--React
+ - Axios
+ - jQuery
+ - Swiper
+ - Redux Toolkit
+ - React
 
 ## Author 
 Julia Kryshtapovich  
