@@ -7,9 +7,11 @@ This is a project of a Movie website.
 This website is created for searching movies and TV shows. On the Home page, you can enter the movie title you are looking for in the search bar. You can sort the results using filters by date and genre type. The Trends page shows you which movies are in the top for the current month and week. You can also add your favorite movies to the Favorites page. The Settings page allows you to change the theme of the entire site.
 
 ## Libraries Used
-- Axios (for fetching and processing data from the API).
-- jQuery (for changing the color of buttons to create a pressed button effect).
-- Swiper (for sliders).
+-Axios
+-jQuery
+-Swiper
+-Redux Toolkit
+-React
 
 ## Author 
 Julia Kryshtapovich  
@@ -33,7 +35,4 @@ Favorites Page : <img width="669" alt="Снимок экрана 2024-03-27 в 2
 
 
 Settings Page : <img width="665" alt="Снимок экрана 2024-03-27 в 20 14 27" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/5e1477f6-6f0d-4803-ad69-462597ca45e9">
-
-Sign In page: <img width="1280" alt="Снимок экрана 2024-03-27 в 20 05 54" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/9422e360-3a33-4561-8863-c0296468a9dd">
-
 
