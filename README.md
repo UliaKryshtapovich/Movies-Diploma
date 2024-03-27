@@ -25,14 +25,19 @@ git clone https://github.com/UliaKryshtapovich/Movies-Diploma.git ;
 
 ## Screenshots
 
-Home Page : <img width="667" alt="Снимок экрана 2024-03-27 в 20 11 13" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/9a895efb-0e3c-45e0-b7b5-21fe59fe47e9">
+Home Page :  
+<img width="667" alt="Снимок экрана 2024-03-27 в 20 11 13" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/9a895efb-0e3c-45e0-b7b5-21fe59fe47e9">
 
-Trends Page : <img width="665" alt="Снимок экрана 2024-03-27 в 20 11 55" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/f8e89db8-1ad5-471f-a14f-c9b0d4739765">
+Trends Page : 
+<img width="665" alt="Снимок экрана 2024-03-27 в 20 11 55" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/f8e89db8-1ad5-471f-a14f-c9b0d4739765">
 
 
-Favorites Page : <img width="669" alt="Снимок экрана 2024-03-27 в 20 14 07" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/a3349056-a528-4753-8e9c-5a6dc5c79e69">
+Favorites Page : 
+<img width="669" alt="Снимок экрана 2024-03-27 в 20 14 07" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/a3349056-a528-4753-8e9c-5a6dc5c79e69">
 
 
-Settings Page : <img width="665" alt="Снимок экрана 2024-03-27 в 20 14 27" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/5e1477f6-6f0d-4803-ad69-462597ca45e9">
+Settings Page : 
+<img width="665" alt="Снимок экрана 2024-03-27 в 20 14 27" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/5e1477f6-6f0d-4803-ad69-462597ca45e9">
 
-Sign In page: <img width="1280" alt="Снимок экрана 2024-03-27 в 20 05 54" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/9422e360-3a33-4561-8863-c0296468a9dd">
+Sign In page: 
+<img width="1280" alt="Снимок экрана 2024-03-27 в 20 05 54" src="https://github.com/UliaKryshtapovich/Movies-Diploma-thesis-/assets/103308011/9422e360-3a33-4561-8863-c0296468a9dd">
