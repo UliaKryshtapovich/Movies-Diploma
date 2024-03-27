@@ -1,16 +1,19 @@
 @import "../../../style/variables.scss";
 
 .render-poster {
-    // max-width: 266px;
     border-radius: 10px;
     position: relative;
+    width: 266px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
 
     .render-poster_img {
         overflow: hidden;
         border-radius: 20px;
         border: solid transparent 1px;
-        // width: 100%;
-        width: 266px;
+        width: 100%;
         height: 357px;
         margin-bottom: 20px;
 

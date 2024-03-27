@@ -11,3 +11,4 @@ export default configureStore({// управлениe состояния
     favorites: favoritesReducer// добавление и удаление в фаворит
   },
 });
+//хранилище 

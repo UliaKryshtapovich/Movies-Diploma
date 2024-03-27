@@ -11,7 +11,7 @@ export async function getPost( // прокидываем через useEffect
     const { data, status } = await axios.get(
       `https://www.omdbapi.com/?apikey=9be02b9c&s=${search}${page ? `&page=${page}` : ""}${
         type ? `&type=${type}` : ""
-      }${year ? `&y=${year}` : ""}&i=${id}`,
+      }${year ? `&y=${year}` : ""}`,
       {
         headers: {
           Accept: "application/json",

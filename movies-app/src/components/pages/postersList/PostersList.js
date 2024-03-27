@@ -4,7 +4,7 @@ import {
   setPostersList,
   setPage,
   resetPostersList,
-} from "../../redux/postersSlice";
+} from "../../../redux/postersSlice";
 import { getSinglePost, getPost } from "../../../services/MoviesService";
 import "../../pages/postersList/postersList.scss";
 import DetailPage from "../../../components/pages/detailPage/DetailPage";

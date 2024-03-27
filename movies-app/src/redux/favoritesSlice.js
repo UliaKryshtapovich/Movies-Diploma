@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: [],
-  reducers: {
+  reducers: { //фильтр, который знает состояние(state) store и какое событие(action) произошло, потом обновляет состояние 
     addToFavorites(state, action) {
       state.push(action.payload);
     },

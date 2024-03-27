@@ -3,12 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import PosterCard from "../postersList/posterCard";
 import "../favoritesPage/favoritesPage.scss";
-import { useDispatch } from "react-redux";
-import { removeFromFavorites } from '../../redux/favoritesSlice';
-import imgFavorite from '../../../resources/FrameNotFavorite.png'; // Импорт изображения
+//useSelector - для получения favorites из Redux, useDispatch - чтобы отправлять action Redux в стор
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromFavorites } from "../../../redux/favoritesSlice";
+import imgFavorite from "../../../resources/FrameNotFavorite.png";
 
-function FavoritesPage({ favorites }) {
+function FavoritesPage() {
   const dispatch = useDispatch();
+
+  const favorites = useSelector((state) => state.favorites);
 
   const handleClickPost = (id) => {
     console.log("Clicked on poster with ID:", id);

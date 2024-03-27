@@ -6,13 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark, faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import notFoundImg from "../../../resources/img-not-found.jpg";
 import RecommendedPostersSlider from "../../recomendPosterSlider/RecomendPosterSlider";
-import LoadingSpinner from '../../loadingSpinner/LoadingSpinner';
+import LoadingSpinner from "../../loadingSpinner/LoadingSpinner";
+import { useDispatch } from "react-redux";
+import { addToFavorites } from "../../../redux/favoritesSlice";
 
-function DetailPage({ addToFavorites }) {
+function DetailPage() {
   let { imdbID } = useParams();
   const [movieData, setMovieData] = useState(null);
   const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setLoading(true);
@@ -26,15 +29,15 @@ function DetailPage({ addToFavorites }) {
   }, [imdbID]);
 
   const handleAddToFavorites = () => {
-    if (movieData && !isAddedToFavorites) {
-      addToFavorites(movieData);
-      setIsAddedToFavorites(true);
+    if (movieData && !isAddedToFavorites) {//проверка, что movieData и что постер еще не был добавлен в избранное 
+      dispatch(addToFavorites(movieData));// dispatch отправляет экшен addToFavorites(movieData) в store чтобы обновить состояние и  экшен сообщает Redux о том, что нужно добавить постер в favorites
+      setIsAddedToFavorites(true); // после отправки экшена - isAddedToFavorites в true, чтобы небыло повторного добавления этого постера в избранное
     }
   };
 
   return (
     <div className="detail-page">
-       {loading && <LoadingSpinner />}
+      {loading && <LoadingSpinner />}
       {movieData && (
         <div className="detail-wrapper">
           <div className="detail-img_wrapper" data-type={movieData.Type}>

@@ -6,7 +6,7 @@ import {
   setYearFilter,
   setTypeFilter,
   resetFilters,
-} from "../../redux/filterSlice";
+} from "../../../redux/filterSlice";
 import "../../../components/modals/filterModal/filterModal.scss";
 import $ from "jquery";
 
@@ -24,11 +24,6 @@ function FilterModal({ handleClose }) {
     setTypeFilterLocal(type);
   };
 
-  // const handleTitleChange = (e) => {
-  //   const { value } = e.target;
-  //   setTitleFilterLocal(value); //  фильтр по заголовку
-  // };
-
   const handleClearFilters = () => {
     dispatch(resetFilters()); // сброс всех фильтров
     setYearFilterLocal(""); //  по году
@@ -36,7 +31,7 @@ function FilterModal({ handleClose }) {
   };
 
   const handleFiltersClick = () => {
-    // диспатчим для обновления actions 
+    // диспатчим для обновления actions
     dispatch(setYearFilter(yearFilter));
     dispatch(setTypeFilter(typeFilter));
     handleClose();
@@ -71,17 +66,6 @@ function FilterModal({ handleClose }) {
             <button className="filter-sort_year filter-btn">Year</button>
           </div>
         </div>
-        {/* <div className="filter-title">
-          <p> Title </p>
-          <div className="filter-title_wrapper">
-            <input
-              className="filter-title_input"
-              placeholder="Title"
-              value={titleFilter}
-              onChange={handleTitleChange}
-            />
-          </div>
-        </div> */}
         <div className="filter-movie">
           <p> Type </p>
           <div className="filter-movie_type">

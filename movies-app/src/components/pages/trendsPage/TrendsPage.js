@@ -7,7 +7,7 @@ import '../../pages/postersList/postersList.scss';
 import PosterCard from '../postersList/posterCard';
 import { getPost } from '../../../services/MoviesService';
 
-import 'swiper/css';
+// import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -34,23 +34,28 @@ function TrendsPage() {
 
   useEffect(() => {
     const updateTrendingSlidesPerView = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1920) {
+        setTrendingSlidesPerView(4);
+      } else if (window.innerWidth >= 1440) {
         setTrendingSlidesPerView(3);
+      } else if (window.innerWidth >= 1024) {
+        setTrendingSlidesPerView(2);
       } else if (window.innerWidth >= 768) {
         setTrendingSlidesPerView(3);
       } else {
         setTrendingSlidesPerView(1);
       }
     };
-
+  
     updateTrendingSlidesPerView();
-
+  
     window.addEventListener("resize", updateTrendingSlidesPerView);
-
+  
     return () => {
       window.removeEventListener("resize", updateTrendingSlidesPerView);
     };
   }, []);
+  
 
   useEffect(() => {
     const trendingSwiper = new Swiper('.trending-swiper-container', {
@@ -71,6 +76,8 @@ function TrendsPage() {
       pagination: {
         el: '.trending-swiper-pagination',
         clickable: true,
+        type: "bullets",
+        dynamicBullets: true, 
       },
     });
 
@@ -95,7 +102,7 @@ function TrendsPage() {
         <div className="swiper-button-next trending-swiper-button-next"></div>
       </div>
       <h3 style={{ paddingTop: '30px', paddingBottom: '30px'  }}> New Releases </h3> 
-      <ul className="movies-grid movies-grid_trends">
+      <ul className="movies-grid ">
         {searchResultsDuna.map((data) => (
           <div key={data.imdbID}>
             <PosterCard data={data} onClick={handleClickTrendsPost} />

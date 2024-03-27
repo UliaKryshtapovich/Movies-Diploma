@@ -29,7 +29,14 @@
         flex-wrap: wrap;
         padding: 40px;
         justify-content: space-between;
+    }
 
+    .color-wrapper {
+        align-items: center;
+    }
+
+    .color-wrapper svg {
+        width: 30px;
     }
 
     .password-start,
@@ -46,7 +53,7 @@
         background-color: var(--colors-bg_input);
         border-radius: 10px;
         height: 53px;
-        color:var(--colors-text);
+        color: var(--colors-text);
     }
 
     .btns {
@@ -58,11 +65,13 @@
             width: 266px;
             border-radius: 10px;
             background-color: $purple;
+            color: $white_text;
 
             &:hover {
                 background-color: $purple-hover-btn;
             }
         }
+
         .save {
             margin-left: 10px;
         }

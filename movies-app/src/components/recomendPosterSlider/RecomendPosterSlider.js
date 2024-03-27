@@ -20,23 +20,28 @@ function RecommendedPostersSlider({ onClickPoster }) {
 
   useEffect(() => {
     const updateSlidesPerView = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1920) {
+        setSlidesPerView(4);
+      } else if (window.innerWidth >= 1440) {
         setSlidesPerView(3);
+      } else if (window.innerWidth >= 1024) {
+        setSlidesPerView(2);
       } else if (window.innerWidth >= 768) {
         setSlidesPerView(3);
       } else {
         setSlidesPerView(1);
       }
     };
-
+  
     updateSlidesPerView();
-
+  
     window.addEventListener("resize", updateSlidesPerView);
-
+  
     return () => {
       window.removeEventListener("resize", updateSlidesPerView);
     };
   }, []);
+
 
   const handleClickRecommendsPost = (id) => {
     console.log("Clicked on poster with ID:", id);
@@ -47,8 +52,8 @@ function RecommendedPostersSlider({ onClickPoster }) {
       slidesPerView: slidesPerView,
       spaceBetween: 5,
       loop: true,
-      slidesPerGroup: 1,
-      loopFillGroupWithBlank: true,
+      loopAdditionalSlides: 2, 
+      slidesPerGroup:1,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
@@ -61,6 +66,8 @@ function RecommendedPostersSlider({ onClickPoster }) {
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        type: "bullets",
+        dynamicBullets: true, 
       },
     });
 

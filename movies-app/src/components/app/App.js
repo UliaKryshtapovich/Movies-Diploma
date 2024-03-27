@@ -18,13 +18,9 @@ import Footer from "../../components/footer/Footer";
 import SignIn from "../signIn/SignIn";
 import Success from "../success/Success";
 import { ThemeProvider } from "../pages/settingsPage/ThemeContext";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { addToFavorites, removeFromFavorites } from "../redux/favoritesSlice";
 
 function App() {
-  const favorites = useSelector((state) => state.favorites);
-  const dispatch = useDispatch();
+
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   const handleSignIn = () => {
@@ -53,12 +49,12 @@ function App() {
                   <Route path="/postersList" element={<PostersList />} />
                   <Route
                     path="/detail/:imdbID"
-                    element={<DetailPage addToFavorites={(movie) => dispatch(addToFavorites(movie))} />}
+                    element={<DetailPage />}
                   />
                   <Route path="/trendsPage" element={<TrendsPage />} />
                   <Route
                     path="/favoritesPage"
-                    element={<FavoritesPage favorites={favorites} onRemoveFavorite={(id) => dispatch(removeFromFavorites(id))} />}
+                    element={<FavoritesPage />}
                   />
                   <Route path="/settingsPage" element={<SettingsPage />} />
                   <Route path="*" element={<Page404 />} />

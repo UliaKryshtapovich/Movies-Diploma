@@ -9,7 +9,7 @@ function NoMoreMovies({ show, onClose }) {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        zIndex: "200",
+        // zIndex: "200",
       }}
     >
       <div
@@ -19,9 +19,11 @@ function NoMoreMovies({ show, onClose }) {
         style={{
           display: show ? "block" : "none",
           backgroundColor: "rgba(123, 97, 255, 1)",
-          padding: "50px",
+          padding: "20px",
           justifyContent: "left",
           alignItems: "center",
+          maxWidth: "530px",
+          borderRadius:"10px",
         }}
       >
         <div className="modal-dialog modal-dialog-centered" role="document">
@@ -36,9 +38,9 @@ function NoMoreMovies({ show, onClose }) {
             <div className="modal-header"></div>
             <div
               className="modal-body"
-              style={{ fontSize: "30px", paddingBottom: "30px" }}
+              style={{ fontSize: "25px", paddingBottom: "30px" }}
             >
-              <p style={{ fontSize: "30px", color: "white" }}>
+              <p>
                 No more movies to load
               </p>
             </div>
@@ -49,8 +51,11 @@ function NoMoreMovies({ show, onClose }) {
                 onClick={onClose}
                 style={{
                   color: "rgba(123, 97, 255, 1)",
-                  padding: "10px 20px",
-                  cursor: 'pointer'
+                  padding: "15px, 50px;",
+                  width: "120px",
+                  height:"45px",
+                  cursor: 'pointer',
+                  borderRadius:"10px",
                 }}
               >
                 Close
