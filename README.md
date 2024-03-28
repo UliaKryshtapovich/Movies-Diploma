@@ -20,10 +20,10 @@ GitHub: [UliaKryshtapovich](https://github.com/UliaKryshtapovich)
 
 ## Installation
 Clone the repository:
-git clone https://github.com/UliaKryshtapovich/Movies-Diploma.git ;
--cd Movies-Diploma ;
--Install dependencies: npm install ;
--Start the development server: npm start ;
+  - git clone https://github.com/UliaKryshtapovich/Movies-Diploma.git ;
+  - cd Movies-Diploma ;
+  - Install dependencies: npm install ;
+  - Start the development server: npm start ;
 
 ## Screenshots
 
